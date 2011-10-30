@@ -10,7 +10,7 @@ describe FBGraph do
                                     :secret_id => @secret_id,
                                     :token => 'token')
       @base = FBGraph::Base.new(@client)
-      
+
     end
 
     describe 'initialization' do
@@ -71,18 +71,18 @@ describe FBGraph do
 
           it 'should request with the path "/123"' do
             uri = "123?access_token=token"
-            @base.find('123')            
-            expect_consumer(uri)                        
+            @base.find('123')
+            expect_consumer(uri)
             @base.info!(false)
           end
-          
+
           it "should parse the result by default" do
             uri = "123?access_token=token"
             @base.find('123')
             expect_consumer(uri, '{"me": [1, 2]}')
             @base.info!.me.should == [1, 2]
           end
-          
+
           describe 'when a connection is passed' do
             it 'should request with the path "/123/home"' do
               uri = "123/home?access_token=token"
@@ -135,7 +135,7 @@ describe FBGraph do
           @base.delete!(false)
         end
       end
-      
+
     end
 
   end

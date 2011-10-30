@@ -8,7 +8,7 @@ describe FBGraph do
       @secret_id = 'secret_id'
       @client = FBGraph::Client.new(:client_id => @client_id,
                                     :secret_id => @secret_id)
-      @authorization = FBGraph::Authorization.new(@client)                              
+      @authorization = FBGraph::Authorization.new(@client)
     end
 
     describe 'initialization' do
@@ -20,7 +20,7 @@ describe FBGraph do
     describe "instance methods" do
       describe '.authorize_url' do
         it 'should return the authorization url' do
-          @authorization.authorize_url(:redirect_uri => 'redirect/to/path' , 
+          @authorization.authorize_url(:redirect_uri => 'redirect/to/path' ,
                                        :scope => 'email,user_photos,friends_photos').should == "https://graph.facebook.com/oauth/authorize?scope=email%2Cuser_photos%2Cfriends_photos&client_id=client_id&type=web_server&redirect_uri=redirect%2Fto%2Fpath"
         end
       end
@@ -41,6 +41,6 @@ describe FBGraph do
         end
       end
     end
-    
+
   end
 end

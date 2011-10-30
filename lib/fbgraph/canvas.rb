@@ -1,7 +1,7 @@
 module FBGraph
-  
+
   class Canvas
-    
+
     class << self
       def parse_signed_request(secret_id,request)
         encoded_sig, payload = request.split('.', 2)
@@ -19,16 +19,16 @@ module FBGraph
         end
         data
       end
-      
+
       private
-      
+
       def urldecode64(str)
         encoded_str = str.gsub('-','+').gsub('_','/')
         encoded_str += '=' while !(encoded_str.size % 4).zero?
         Base64.decode64(encoded_str)
       end
-    end  
-    
+    end
+
   end
-  
+
 end

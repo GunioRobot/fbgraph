@@ -1,15 +1,15 @@
 module FBGraph
   class Selection < Base
-    
+
     OBJECTS = %w(user album event group link note page photo post status video comment checkin).freeze
-   
-    CONNECTION_TYPES = %w(home photos comments feed	noreply	
-                          maybe invited attending declined picture 
-                          members tagged links groups albums	
-                          statuses	videos notes posts events friends	
-                          activities interests music books movies television	
+
+    CONNECTION_TYPES = %w(home photos comments feed	noreply
+                          maybe invited attending declined picture
+                          members tagged links groups albums
+                          statuses	videos notes posts events friends
+                          activities interests music books movies television
                           likes inbox outbox updates accounts checkins).freeze
-   
+
     OBJECTS.each do |object|
       class_eval  <<-METHOD
         def #{object}(object)
@@ -18,7 +18,7 @@ module FBGraph
         end
      METHOD
     end
-   
+
     CONNECTION_TYPES.each do |object|
       class_eval  <<-METHOD
         def #{object}
@@ -32,11 +32,11 @@ module FBGraph
     def me
       find('me')
     end
-   
+
     def metadata
       @params.merge!({:metadata => '1'})
       self
-    end   
+    end
 
     def picture(type='square')
       params = {:type => type}

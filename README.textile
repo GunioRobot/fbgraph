@@ -170,7 +170,7 @@ h3. Search
 
 h4. client.search.query('query').info!
 
-p.  Get the search results 
+p.  Get the search results
 
 notextile. <code> results = client.search.query('facebook').info! </code>
 
@@ -193,7 +193,7 @@ p. Set the object to be subscribed, modified or unsubscribed
 
 h4. client.realtime.fields('email,picture')
 
-p. Set the objects fields 
+p. Set the objects fields
 
 
 h4. client.realtime.callback_url(url)

@@ -8,12 +8,12 @@ describe FBGraph do
         @secret_id = 'secret_id'
       end
       describe 'default' do
-        
+
         before :each do
           @client = FBGraph::Client.new(:client_id => @client_id,
                                         :secret_id => @secret_id)
         end
-      
+
         it 'should set the client_id' do
           @client.client_id.should == @client_id
         end
@@ -24,7 +24,7 @@ describe FBGraph do
           @client.facebook_uri.should == "https://graph.facebook.com"
         end
       end
-      
+
       describe 'when token is present' do
         before :each do
           @token = 'token'
@@ -32,7 +32,7 @@ describe FBGraph do
                                         :secret_id => @secret_id,
                                         :token => @token)
         end
-        
+
         it 'should set the access_token' do
           @client.access_token.should == @token
         end

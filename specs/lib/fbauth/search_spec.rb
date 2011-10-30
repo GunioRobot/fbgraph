@@ -8,7 +8,7 @@ describe FBGraph do
       @secret_id = 'secret_id'
       @client = FBGraph::Client.new(:client_id => @client_id,
                                     :secret_id => @secret_id)
-      @search = FBGraph::Search.new(@client)                              
+      @search = FBGraph::Search.new(@client)
     end
 
     describe "initialization" do
@@ -19,7 +19,7 @@ describe FBGraph do
 
 
     describe 'instance methods' do
-      
+
       describe '.query' do
         before(:each) do
           @result = @search.query('query')
@@ -43,6 +43,6 @@ describe FBGraph do
         end
       end
     end
-    
+
   end
 end

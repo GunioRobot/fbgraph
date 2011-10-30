@@ -6,7 +6,7 @@ module FBGraph
       super(client)
     end
 
-    
+
     OBJECTS = %w(user permissions errors).freeze
 
     OBJECTS.each do |object|
@@ -31,18 +31,18 @@ module FBGraph
     def veryfy_token(token)
       @params[:veryfy_token] = token
       self
-    end 
+    end
 
 
-    alias_method :subscribe! , :publish! 
-    
+    alias_method :subscribe! , :publish!
+
     private
-    
+
     def build_open_graph_path(objects,connection_type = nil , params = {})
       request = "/" + [objects , connection_type].compact.join('/')
       request += "?"+params.to_a.map{|p| p.join('=')}.join('&') unless params.empty?
       request
     end
-    
+
   end
 end

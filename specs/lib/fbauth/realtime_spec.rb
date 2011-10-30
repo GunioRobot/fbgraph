@@ -8,7 +8,7 @@ describe FBGraph do
       @secret_id = 'secret_id'
       @client = FBGraph::Client.new(:client_id => @client_id,
                                     :secret_id => @secret_id)
-      @search = FBGraph::Search.new(@client)                              
+      @search = FBGraph::Search.new(@client)
     end
-  end  
+  end
 end
